@@ -1,17 +1,24 @@
 import React from 'react';
 import {MainPage, CartPage} from '../pages';
 import AppHeader from '../app-header';
+import WithRestoService from '../hoc';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 
 import Background from './food-bg.jpg';
 
-const App = () => {
+const App = ({RestoService}) => {
+    console.log(RestoService.getMenuItems());
     return (
+        <Router>
         <div style={{background: `url(${Background}) center center/cover no-repeat`}} className="app">
             <AppHeader total={50}/>
-            <MainPage/>
-            <CartPage/>
+            <Route path='/' exact component={() => 
+                        <MainPage/>
+            }/>  
+            <Route path='/cart' component={CartPage}/>
         </div>
+        </Router>
     )
 }
 
-export default App;
+export default WithRestoService()(App);
