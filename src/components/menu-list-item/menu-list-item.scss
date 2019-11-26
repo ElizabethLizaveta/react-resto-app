@@ -25,6 +25,7 @@
         font-size: 18px;
         font-weight: 300;
         margin-bottom: 10px;
+        display: flex;
         span {
             font-weight: 700;
         }
@@ -38,5 +39,9 @@
         color: #fff;
         font-size: 16px;
         cursor: pointer;
+    }
+    &__category-icon {
+        width: 20px;
+        margin-left: 10px;
     }
 }
