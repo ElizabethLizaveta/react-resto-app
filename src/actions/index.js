@@ -18,8 +18,24 @@ const menuFailed = () => {
     };
 };
 
+const addedToCart = (id) => {
+    return {
+        type: 'ITEM_ADD_TO_CART',
+        payload: id
+    };
+};
+
+const deletedFromCart = (id) => {
+    return {
+        type: 'ITEM_DELETE_FROM_CART',
+        payload: id
+    };
+};
+
 export {
     menuLoaded,
     menuRequested,
-    menuFailed
+    menuFailed,
+    addedToCart,
+    deletedFromCart
 };

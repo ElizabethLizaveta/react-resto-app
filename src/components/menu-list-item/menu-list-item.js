@@ -2,7 +2,7 @@ import React from 'react';
 import CategoryIcon from '../category-icon';
 import './menu-list-item.scss';
 
-const MenuListItem = ({ menuItem }) => {
+const MenuListItem = ({ menuItem, onAddToCart }) => {
     
     const { title, price, url, category } = menuItem;
 
@@ -17,7 +17,7 @@ return (
                 <CategoryIcon category={category}/>
             </div>
             <div className="menu__price">Price: <span>{price}$</span></div>
-            <button className="menu__btn">Add to cart</button>
+            <button onClick={() => onAddToCart()} className="menu__btn">Add to cart</button>
         </li>
     </>
 )
